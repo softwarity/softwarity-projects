@@ -89,8 +89,10 @@ export class SoftwarityProjects extends HTMLElement {
 
   private checkPosition(): void {
     const rect = this.getBoundingClientRect();
-    const spaceRight = window.innerWidth - rect.right;
-    this.openLeft = spaceRight < 250;
+    const centerX = rect.left + rect.width / 2;
+    const windowCenter = window.innerWidth / 2;
+    // Open left if button is in the right half of the window
+    this.openLeft = centerX > windowCenter;
     const container = this.shadow.querySelector('.menu-container');
     container?.classList.toggle('open-left', this.openLeft);
   }
