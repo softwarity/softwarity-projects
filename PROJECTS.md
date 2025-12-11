@@ -1,12 +1,12 @@
 # Other projects
 
 ## Web Components
-- [GeoJSON Editor](https://github.com/softwarity/geojson-editor)
-- [Tac editor](https://github.com/softwarity/tac-editor)
+- [GeoJSON Editor](https://softwarity.github.io/geojson-editor/)
+- [Tac editor](https://softwarity.github.io/tac-editor)
 
 ---
 
 ## Angular
-- [Row acions](https://github.com/softwarity/row-actions)
-- [loading indicator](https://github.com/softwarity/loading-indicator)
+- [Row acions](https://softwarity.github.io/row-actions)
+- [loading indicator](https://softwarity.github.io/loading-indicator)
 
