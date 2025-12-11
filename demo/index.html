@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Demo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      padding: 40px;
+      background: light-dark(#f5f5f5, #121212);
+    }
+    .theme-toggle {
+      padding: 4px;
+      background: light-dark(#fff, #2d2d2d);
+      border: 1px solid light-dark(#ddd, #404040);
+      border-radius: 6px;
+      cursor: pointer;
+      color: inherit;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .buttons-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .spacer {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons-row">
+    <softwarity-projects></softwarity-projects>
+    <span class="spacer"></span>
+    <softwarity-projects></softwarity-projects>
+    <button class="theme-toggle" id="theme-toggle">
+      <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+    </button>
+  </div>
+  <script type="module" src="/src/softwarity-projects.ts"></script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+
+    function isDark() {
+      const style = document.documentElement.style.colorScheme;
+      if (style) return style === 'dark';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function updateIcon() {
+      icon.textContent = isDark() ? 'light_mode' : 'dark_mode';
+    }
+
+    toggle.addEventListener('click', () => {
+      document.documentElement.style.colorScheme = isDark() ? 'light' : 'dark';
+      updateIcon();
+    });
+
+    updateIcon();
+  </script>
+</body>
+</html>

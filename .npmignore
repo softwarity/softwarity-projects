@@ -1,0 +1,12 @@
+demo/
+test/
+.github/
+vite.config.js
+web-test-runner.config.js
+tsconfig.json
+coverage/
+*.log
+*.map
+.git
+.gitignore
+PROJECTS.md
