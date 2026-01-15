@@ -8,5 +8,6 @@
 
 ## Angular
 - [Row acions](https://softwarity.github.io/row-actions)
+- [Timezone select](https://softwarity.github.io/timezone-select)
 - [loading indicator](https://softwarity.github.io/loading-indicator)
 
