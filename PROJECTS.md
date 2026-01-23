@@ -1,8 +1,9 @@
 # Other projects
 
 ## Web Components
-- [GeoJSON Editor](https://softwarity.github.io/geojson-editor/)
+- [GeoJSON Editor](https://softwarity.github.io/geojson-editor)
 - [Tac editor](https://softwarity.github.io/tac-editor)
+- [Interactive code](https://softwarity.github.io/interactive-code)
 
 ---
 
