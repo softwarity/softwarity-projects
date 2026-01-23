@@ -9,6 +9,7 @@
 ## Angular
 - [Row acions](https://softwarity.github.io/row-actions)
 - [Timezone select](https://softwarity.github.io/timezone-select)
+- [Split button](https://softwarity.github.io/split-button)
 - [Rail navigator](https://softwarity.github.io/rail-nav)
 - [loading indicator](https://softwarity.github.io/loading-indicator)
 
