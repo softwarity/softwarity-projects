@@ -2,7 +2,7 @@
 
 ## Web Components
 - [GeoJSON Editor](https://softwarity.github.io/geojson-editor)
-- [TTAAii provider](https://softwarity.github.io/tac-provider)
+- [TTAAii provider](https://softwarity.github.io/ttaaii-provider)
 - [Tac editor](https://softwarity.github.io/tac-editor)
 - [Interactive code](https://softwarity.github.io/interactive-code)
 
