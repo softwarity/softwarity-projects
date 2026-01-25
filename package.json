@@ -1,6 +1,6 @@
 {
   "name": "@softwarity/projects",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A menu button Web Component built from Markdown with hierarchical navigation",
   "type": "module",
   "main": "./dist/softwarity-projects.js",
