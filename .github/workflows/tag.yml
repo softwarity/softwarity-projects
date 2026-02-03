@@ -1,9 +1,5 @@
 name: Publish softwarity/projects to NPM
 
-# Backup workflow for publishing when tags are pushed manually
-# The primary release workflow (release.yml) handles automated releases
-# This workflow may not trigger when tags are created via PAT tokens
-
 on:
   push:
     tags:

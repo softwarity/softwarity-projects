@@ -1,10 +1,5 @@
 name: Create Tag/Release
 
-# This workflow creates a new version tag and publishes to NPM
-# Triggered manually via workflow_dispatch
-# Note: Publishing is done in this workflow because PAT tokens
-# don't trigger the push:tags event in other workflows
-
 on:
   workflow_dispatch:
 
@@ -18,20 +13,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
       - run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email ""
       - run: npm version patch
-      - name: Install dependencies
-        run: npm install
-      - name: Build package
-        run: npm run build
-      - name: Publish to NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Push tag and version commit
-        run: |
+      - run: |
           git push --all
           git push --tags
