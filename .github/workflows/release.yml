@@ -20,3 +20,11 @@ jobs:
       - run: |
           git push --all
           git push --tags
+      - name: Setup NPM auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - name: Install dependencies
+        run: npm install
+      - name: Build package
+        run: npm run build
+      - name: Publish to NPM
+        run: npm publish --access public
