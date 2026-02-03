@@ -18,18 +18,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
       - run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email ""
       - run: npm version patch
-      - run: |
-          git push --all
-          git push --tags
-      - name: Setup NPM auth
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Install dependencies
         run: npm install
       - name: Build package
         run: npm run build
       - name: Publish to NPM
         run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Push tag and version commit
+        run: |
+          git push --all
+          git push --tags
