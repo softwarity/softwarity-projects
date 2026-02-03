@@ -1,5 +1,10 @@
 name: Create Tag/Release
 
+# This workflow creates a new version tag and publishes to NPM
+# Triggered manually via workflow_dispatch
+# Note: Publishing is done in this workflow because PAT tokens
+# don't trigger the push:tags event in other workflows
+
 on:
   workflow_dispatch:
 
