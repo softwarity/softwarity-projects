@@ -17,4 +17,5 @@
 - [Split button](https://softwarity.github.io/split-button)
 - [Rail navigator](https://softwarity.github.io/rail-nav)
 - [loading indicator](https://softwarity.github.io/loading-indicator)
+- [Xliff translator](https://xliff.softwarity.io/en/)
 
