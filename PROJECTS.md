@@ -1,7 +1,7 @@
 # Other projects
 
 ## IA
-- [AIPilot](https://softwarity.github.io/aipilot-cli)
+- [AIPilot](https://aipilot.softwarity.io)
 
 ## Web Components
 - [GeoJSON Editor](https://softwarity.github.io/geojson-editor)
