@@ -18,6 +18,7 @@
 - [Rail navigator](https://softwarity.github.io/rail-nav)
 - [loading indicator](https://softwarity.github.io/loading-indicator)
 - [store](https://softwarity.github.io/store)
+- [angular-i18n-cli](https://softwarity.github.io/angular-i18n-cli/)
 - [Xliff translator](https://xliff.softwarity.io/en/)
 
 
