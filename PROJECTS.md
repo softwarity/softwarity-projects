@@ -11,6 +11,9 @@
 
 ---
 
+## Nestjs
+- [AMQP1.0](https://softwarity.github.io/nestjs-amqp)
+
 ## Angular
 - [Row actions](https://softwarity.github.io/row-actions)
 - [Timezone select](https://softwarity.github.io/timezone-select)
