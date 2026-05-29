@@ -13,7 +13,7 @@
 
 ## Nestjs
 - [AMQP1.0](https://softwarity.github.io/nestjs-amqp)
-- [GRANTED](https://softwarity.github.io/nestjs-granted)
+- [RBAC Granted](https://softwarity.github.io/nestjs-granted)
 
 ## Angular
 - [Row actions](https://softwarity.github.io/row-actions)
