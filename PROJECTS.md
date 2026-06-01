@@ -26,6 +26,7 @@
 - [loading indicator](https://softwarity.github.io/loading-indicator)
 - [store](https://softwarity.github.io/store)
 - [angular-i18n-cli](https://softwarity.github.io/angular-i18n-cli/)
+- [polyglot](https://softwarity.github.io/polyglot/)
 - [Xliff translator](https://xliff.softwarity.io/en/)
 
 
