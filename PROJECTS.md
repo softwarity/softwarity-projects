@@ -34,4 +34,5 @@
 - [polyglot](https://softwarity.github.io/polyglot/)
 - [Xliff translator](https://xliff.softwarity.io/en/)
 
-
+## Freelance
+- [Dividende vs Salary](https://softwarity.github.io/dividende-vs-salary/)
