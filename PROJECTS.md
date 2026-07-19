@@ -14,6 +14,7 @@
 
 ## DEV Tools
 - [Plug](https://softwarity.github.io/plug)
+- [Meerkat](https://softwarity.github.io/meerkat)
 
 ## Docker images
 - [PDFBox](https://softwarity.github.io/pdfbox)
