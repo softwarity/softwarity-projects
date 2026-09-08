@@ -31,9 +31,11 @@ interface MenuData {
  * - expand_more: Button dropdown indicator
  * - chevron_right/chevron_left: Submenu indicator
  * - open_in_new: External link indicator
+ * - favorite: Sponsor link (menu footer)
  */
 
 const MATERIAL_SYMBOLS_URL = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap';
+const SPONSOR_URL = 'https://github.com/sponsors/softwarity';
 
 function loadMaterialSymbols(): void {
   if (document.querySelector(`link[href="${MATERIAL_SYMBOLS_URL}"]`)) {
@@ -179,6 +181,16 @@ export class SoftwarityProjects extends HTMLElement {
     `;
   }
 
+  private renderSponsor(): string {
+    return `
+      <div class="menu-separator"></div>
+      <a class="menu-sponsor" href="${SPONSOR_URL}" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined icon">favorite</span>
+        <span class="menu-item-text">Sponsor</span>
+      </a>
+    `;
+  }
+
   private render(): void {
     this.shadow.innerHTML = `
       <style>${styles}</style>
@@ -191,6 +203,7 @@ export class SoftwarityProjects extends HTMLElement {
           ${this.data.sections.map(section =>
             this.renderSection(section)
           ).join('')}
+          ${this.renderSponsor()}
         </div>
       </div>
     `;

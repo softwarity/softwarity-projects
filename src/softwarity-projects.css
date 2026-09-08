@@ -33,6 +33,8 @@
   );
   --sp-accent: light-dark(#0969da, #58a6ff);
   --sp-separator: light-dark(#d0d7de, #30363d);
+  --sp-sponsor: light-dark(#bf3989, #db61a2);
+  --sp-sponsor-bg: light-dark(#fff0f6, #3a1c30);
 }
 
 .menu-button {
@@ -203,4 +205,41 @@
   height: 1px;
   margin: 4px 8px;
   background: var(--sp-separator);
+}
+
+/* Sponsor footer */
+.menu-sponsor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 4px 8px;
+  padding: 6px 12px;
+  color: var(--sp-text);
+  border: 1px solid var(--sp-border);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.menu-sponsor:hover {
+  background: var(--sp-sponsor-bg);
+  border-color: var(--sp-sponsor);
+  color: var(--sp-sponsor);
+}
+
+.menu-sponsor:focus-visible {
+  outline: 2px solid var(--sp-sponsor);
+  outline-offset: 2px;
+}
+
+.menu-sponsor .icon {
+  font-size: 16px;
+  color: var(--sp-sponsor);
+  font-variation-settings: 'FILL' 1;
+}
+
+.menu-sponsor .menu-item-text {
+  flex: none;
 }

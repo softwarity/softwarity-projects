@@ -91,6 +91,26 @@ describe('softwarity-projects', () => {
     });
   });
 
+  describe('sponsor', () => {
+    it('renders the sponsor link at the bottom of the dropdown', async () => {
+      const el = await fixture(html`<softwarity-projects></softwarity-projects>`);
+      const dropdown = el.shadowRoot.querySelector('.menu-dropdown');
+      const sponsor = dropdown.querySelector('.menu-sponsor');
+      expect(sponsor).to.exist;
+      expect(sponsor.getAttribute('href')).to.equal('https://github.com/sponsors/softwarity');
+      expect(sponsor.getAttribute('target')).to.equal('_blank');
+      expect(sponsor.getAttribute('rel')).to.equal('noopener noreferrer');
+      expect(sponsor.textContent).to.include('Sponsor');
+      expect(dropdown.lastElementChild).to.equal(sponsor);
+    });
+
+    it('separates the sponsor link from the sections', async () => {
+      const el = await fixture(html`<softwarity-projects></softwarity-projects>`);
+      const sponsor = el.shadowRoot.querySelector('.menu-sponsor');
+      expect(sponsor.previousElementSibling.classList.contains('menu-separator')).to.be.true;
+    });
+  });
+
   describe('position detection', () => {
     it('has open-left class handling', async () => {
       const el = await fixture(html`<softwarity-projects></softwarity-projects>`);
