@@ -23,13 +23,13 @@
 - [AMQP1.0](https://softwarity.github.io/nestjs-amqp)
 - [RBAC Granted](https://softwarity.github.io/nestjs-granted)
 
-## Frontend
+## Live data
+- [Nestjs/Go/Angular](https://softwarity.github.io/livewire)
+
+### Frontend
 
 ### Web Components
 - [Interactive code](https://softwarity.github.io/interactive-code)
-
-### Live data
-- [Nestjs/Go/Angular](https://softwarity.github.io/livewire)
 
 ### Angular
 - [Row actions](https://softwarity.github.io/row-actions)
