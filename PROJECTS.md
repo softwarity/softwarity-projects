@@ -24,7 +24,7 @@
 - [RBAC Granted](https://softwarity.github.io/nestjs-granted)
 
 ## Live data
-- [Nestjs/Go/Angular](https://softwarity.github.io/livewire)
+- [Nestjs/Go/Angular livewire](https://softwarity.github.io/livewire)
 
 ## Frontend
 
