@@ -26,7 +26,7 @@
 ## Live data
 - [Nestjs/Go/Angular](https://softwarity.github.io/livewire)
 
-### Frontend
+## Frontend
 
 ### Web Components
 - [Interactive code](https://softwarity.github.io/interactive-code)
