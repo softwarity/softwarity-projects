@@ -13,8 +13,8 @@
 ---
 
 ## DEV Tools
-- [Plug](https://softwarity.github.io/plug)
-- [Meerkat](https://softwarity.github.io/meerkat)
+- [Plug](https://plug.softwarity.dev)
+- [Meerkat](https://meerkat.softwarity.dev)
 
 ## Docker images
 - [PDFBox](https://softwarity.github.io/pdfbox)
