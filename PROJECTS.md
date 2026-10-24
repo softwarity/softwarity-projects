@@ -21,10 +21,16 @@
 
 ## Nestjs
 - [AMQP1.0](https://softwarity.github.io/nestjs-amqp)
-- [RBAC Granted](https://softwarity.github.io/nestjs-granted)
+- [RBAC Granted](https://softwarity.github.io/granted)
+- [Livewire](https://softwarity.github.io/livewire)
 
-## Live data
-- [Nestjs/Go/Angular livewire](https://softwarity.github.io/livewire)
+## Go
+- [RBAC Granted](https://softwarity.github.io/granted)
+- [Livewire](https://softwarity.github.io/livewire)
+
+## Quarkus
+- [RBAC Granted](https://softwarity.github.io/granted)
+- [Livewire](https://softwarity.github.io/livewire)
 
 ## Frontend
 
@@ -38,6 +44,7 @@
 - [Rail navigator](https://softwarity.github.io/rail-nav)
 - [loading indicator](https://softwarity.github.io/loading-indicator)
 - [store](https://softwarity.github.io/store)
+- [Livewire](https://softwarity.github.io/livewire)
 - [angular-i18n-cli](https://softwarity.github.io/angular-i18n-cli/)
 - [polyglot](https://softwarity.github.io/polyglot/)
 - [Xliff translator](https://xliff.softwarity.io/en/)
