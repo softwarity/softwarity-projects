@@ -37,6 +37,24 @@ describe('softwarity-projects', () => {
     });
   });
 
+  describe('icons', () => {
+    it('draws its icons inline and loads no font', async () => {
+      const before = document.querySelectorAll('link[href*="fonts.googleapis.com"]').length;
+      const el = await fixture(html`<softwarity-projects></softwarity-projects>`);
+      expect(document.querySelectorAll('link[href*="fonts.googleapis.com"]').length).to.equal(before);
+      expect(el.shadowRoot.querySelector('.menu-button svg.icon path')).to.exist;
+      expect(el.shadowRoot.querySelector('.menu-sponsor svg.icon')).to.exist;
+      expect(el.shadowRoot.querySelectorAll('.menu-submenu-trigger svg.chevron').length).to.be.greaterThan(0);
+      expect(el.shadowRoot.innerHTML).not.to.include('material-symbols');
+    });
+
+    it('sizes an icon by the font size of where it sits', async () => {
+      const el = await fixture(html`<softwarity-projects></softwarity-projects>`);
+      const svg = el.shadowRoot.querySelector('.menu-button svg.icon');
+      expect(Math.round(svg.getBoundingClientRect().width)).to.equal(20);
+    });
+  });
+
   describe('interactions', () => {
     it('opens dropdown on button click', async () => {
       const el = await fixture(html`<softwarity-projects></softwarity-projects>`);

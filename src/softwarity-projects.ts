@@ -27,25 +27,32 @@ interface MenuData {
 }
 
 /**
- * Material Symbols used:
- * - expand_more: Button dropdown indicator
- * - chevron_right/chevron_left: Submenu indicator
- * - open_in_new: External link indicator
- * - favorite: Sponsor link (menu footer)
+ * The icons, drawn inline: Material Symbols Outlined, weight 400, 24 px grid
+ * (fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/<name>/).
+ *
+ * No icon font. The menu used to add a Google Fonts stylesheet to the page
+ * for these five icons: the whole variable font, 4 MB - and, being the same
+ * family as the page's own Material Symbols, it replaced that one everywhere
+ * on the page. Five paths weigh less than the request for the stylesheet.
  */
+const ICONS = {
+  // The menu button's indicator.
+  expand_more: 'M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z',
+  // A submenu; turned over when the menu opens to the left.
+  chevron_right: 'M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z',
+  // A link that opens another site.
+  open_in_new:
+    'M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z',
+  // The sponsor link, filled.
+  favorite:
+    'm480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z',
+} as const;
 
-const MATERIAL_SYMBOLS_URL = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap';
-const SPONSOR_URL = 'https://github.com/sponsors/softwarity';
-
-function loadMaterialSymbols(): void {
-  if (document.querySelector(`link[href="${MATERIAL_SYMBOLS_URL}"]`)) {
-    return;
-  }
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = MATERIAL_SYMBOLS_URL;
-  document.head.appendChild(link);
+function icon(name: keyof typeof ICONS, extra = ''): string {
+  return `<svg class="icon${extra ? ` ${extra}` : ''}" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="${ICONS[name]}"/></svg>`;
 }
+
+const SPONSOR_URL = 'https://github.com/sponsors/softwarity';
 
 export class SoftwarityProjects extends HTMLElement {
   private shadow: ShadowRoot;
@@ -65,7 +72,6 @@ export class SoftwarityProjects extends HTMLElement {
   }
 
   connectedCallback(): void {
-    loadMaterialSymbols();
     this.render();
     document.addEventListener('click', this.handleClickOutside);
   }
@@ -114,19 +120,18 @@ export class SoftwarityProjects extends HTMLElement {
     }
     return `
       <a class="menu-item" href="${item.url}" target="_blank" rel="noopener noreferrer">
-        <span class="material-symbols-outlined icon">open_in_new</span>
+        ${icon('open_in_new')}
         <span class="menu-item-text">${item.text}</span>
       </a>
     `;
   }
 
   private renderSubSection(subSection: SubSection): string {
-    const chevron = 'chevron_right';
     return `
       <div class="menu-submenu">
         <div class="menu-submenu-trigger">
           <span class="menu-item-text">${subSection.title}</span>
-          <span class="material-symbols-outlined icon chevron">${chevron}</span>
+          ${icon('chevron_right', 'chevron')}
         </div>
         <div class="menu-submenu-content">
           ${subSection.items.map(item => this.renderItem(item)).join('')}
@@ -149,12 +154,11 @@ export class SoftwarityProjects extends HTMLElement {
 
     // If section has submenus, render as submenu trigger
     if (hasSubmenus) {
-      const chevron = 'chevron_right';
-      return `
+        return `
         <div class="menu-submenu">
           <div class="menu-submenu-trigger">
             <span class="menu-item-text">${section.title}</span>
-            <span class="material-symbols-outlined icon chevron">${chevron}</span>
+            ${icon('chevron_right', 'chevron')}
           </div>
           <div class="menu-submenu-content">
             ${section.items?.map(item => this.renderItem(item)).join('') || ''}
@@ -167,12 +171,11 @@ export class SoftwarityProjects extends HTMLElement {
     }
 
     // Section with only items - render as submenu
-    const chevron = 'chevron_right';
     return `
       <div class="menu-submenu">
         <div class="menu-submenu-trigger">
           <span class="menu-item-text">${section.title}</span>
-          <span class="material-symbols-outlined icon chevron">${chevron}</span>
+          ${icon('chevron_right', 'chevron')}
         </div>
         <div class="menu-submenu-content">
           ${section.items?.map(item => this.renderItem(item)).join('') || ''}
@@ -185,7 +188,7 @@ export class SoftwarityProjects extends HTMLElement {
     return `
       <div class="menu-separator"></div>
       <a class="menu-sponsor" href="${SPONSOR_URL}" target="_blank" rel="noopener noreferrer">
-        <span class="material-symbols-outlined icon">favorite</span>
+        ${icon('favorite')}
         <span class="menu-item-text">Sponsor</span>
       </a>
     `;
@@ -197,7 +200,7 @@ export class SoftwarityProjects extends HTMLElement {
       <div class="menu-container">
         <button class="menu-button" type="button">
           <span>${this.data.title}</span>
-          <span class="material-symbols-outlined icon">expand_more</span>
+          ${icon('expand_more')}
         </button>
         <div class="menu-dropdown">
           ${this.data.sections.map(section =>
